@@ -61,12 +61,46 @@
             <version>1.4.2.Final</version> <!-- 使用最新版本 -->
             <scope>provided</scope>
         </dependency>
+
+
+
+        <!--测试相关依赖包-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.1</version> <!-- 使用最新版本 -->
 
         </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.11.2</version> <!-- 请使用最新版本 -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JaCoCo 依赖 -->
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.agent</artifactId>
+            <version>0.8.7</version> <!-- 请使用最新版本 -->
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>2.0.9</version> <!-- 请使用最新版本 -->
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito2</artifactId>
+            <version>2.0.9</version> <!-- 请使用最新版本 -->
+            <scope>test</scope>
+        </dependency>
+        <!--transmissibleThreadLocal-->
 
     </dependencies>
 
@@ -103,6 +137,27 @@
 
 <!--                    </annotationProcessorPaths>-->
                 </configuration>
+            </plugin>
+
+            <!-- JaCoCo 插件配置 -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version> <!-- 请使用最新版本 -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
