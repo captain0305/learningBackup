@@ -9,9 +9,6 @@
         <module name="learningBackup" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="learningBackup" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

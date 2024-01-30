@@ -68,6 +68,59 @@
 
         </dependency>
 
+        <!--spring依赖  核心IoC-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.5.RELEASE</version>
+        </dependency>
+        <!-- spring事务 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>5.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.2.5.RELEASE</version>
+        </dependency>
+
+        <!-- mybatis事务 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+
+        <!-- spring和mybatis集成依赖 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+
+        <!-- mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
+        </dependency>
+
+        <!-- 阿里数据库连接池Druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+
+        <!--mybatis plus-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
