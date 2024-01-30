@@ -13,12 +13,11 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mybatis-plus.version>3.4.2</mybatis-plus.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.14</version>
+        <version>1.5.8.RELEASE</version>
         <relativePath/>
     </parent>
     <dependencies>
@@ -46,7 +45,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test</artifactId>
-            <version>2.7.14</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -63,10 +61,6 @@
             <version>1.4.2.Final</version> <!-- 使用最新版本 -->
             <scope>provided</scope>
         </dependency>
-
-
-
-        <!--测试相关依赖包-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -74,107 +68,58 @@
 
         </dependency>
 
+        <!--spring依赖  核心IoC-->
         <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>3.11.2</version> <!-- 请使用最新版本 -->
-            <scope>test</scope>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.5.RELEASE</version>
+        </dependency>
+        <!-- spring事务 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>5.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.2.5.RELEASE</version>
         </dependency>
 
-        <!-- JaCoCo 依赖 -->
+        <!-- mybatis事务 -->
         <dependency>
-            <groupId>org.jacoco</groupId>
-            <artifactId>org.jacoco.agent</artifactId>
-            <version>0.8.7</version> <!-- 请使用最新版本 -->
-            <scope>test</scope>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.1</version>
         </dependency>
 
+        <!-- spring和mybatis集成依赖 -->
         <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-module-junit4</artifactId>
-            <version>2.0.9</version> <!-- 请使用最新版本 -->
-            <scope>test</scope>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>2.0.1</version>
         </dependency>
 
+        <!-- mysql驱动 -->
         <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito2</artifactId>
-            <version>2.0.9</version> <!-- 请使用最新版本 -->
-            <scope>test</scope>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
         </dependency>
-        <!--transmittableThreadLocal-->
+
+        <!-- 阿里数据库连接池Druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
-            <artifactId>transmittable-thread-local</artifactId>
-            <version>2.14.0</version> <!-- 使用最新版本 -->
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>19.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.9.7</version> <!-- 版本号可能会有所不同 -->
+            <artifactId>druid</artifactId>
+            <version>1.2.6</version>
         </dependency>
 
         <!--mybatis plus-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
-
+            <version>3.4.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
-        <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>2.0.1.Final</version>
-        </dependency>
-
-
-        <!-- https://mvnrepository.com/artifact/io.lettuce/lettuce-core -->
-        <dependency>
-            <groupId>io.lettuce</groupId>
-            <artifactId>lettuce-core</artifactId>
-            <version>6.3.0.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-            <version>2.12.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>3.17.1</version> <!-- 使用最新版本 -->
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-core</artifactId>
-            <version>3.4.11</version> <!-- 使用适合你项目的版本 -->
-        </dependency>
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.netty/netty-resolver-dns-native-macos &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.netty</groupId>-->
-<!--            <artifactId>netty-resolver-dns-native-macos</artifactId>-->
-<!--            <version>4.1.104.Final</version>-->
-<!--            <scope>runtime</scope>-->
-<!--        </dependency>-->
 
     </dependencies>
 
@@ -211,27 +156,6 @@
 
 <!--                    </annotationProcessorPaths>-->
                 </configuration>
-            </plugin>
-
-            <!-- JaCoCo 插件配置 -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version> <!-- 请使用最新版本 -->
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
         </plugins>
