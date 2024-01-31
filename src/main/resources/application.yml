@@ -17,6 +17,9 @@ spring:
         max-active: 8
         max-wait: 1000ms
         shutdown-timeout: 100ms
+    redisson:
+      file: classpath:redisson.yml
+
 
   cache:
     type: redis
@@ -26,3 +29,6 @@ spring:
       use-key-prefix: true
       # 设置缓存过期时间
       time-to-live: 3600000
+
+server:
+  port: 10010

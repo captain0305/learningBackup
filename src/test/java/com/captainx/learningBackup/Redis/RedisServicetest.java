@@ -1,17 +1,19 @@
 package com.captainx.learningBackup.Redis;
 
+
 /**
  * @Author: xuchengrui
  * @Date: 2024/1/3
  * @Description:test
  **/
 import com.captainx.learningBackup.Redis.springdataredis.RedisService;
-import org.junit.jupiter.api.Test;
+import org.junit.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
+
 
 @SpringBootTest
 @TestPropertySource(properties = "logging.level.io.lettuce.core=DEBUG")

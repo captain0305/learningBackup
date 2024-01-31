@@ -51,7 +51,7 @@ public class RedisUtil {
         String uuId = UUID.randomUUID().toString() + System.currentTimeMillis();
         set(uuId);
         // SETNX命令，如果key不存在，则设置key的值为value，同时返回1；如果key已经存在，则不做任何操作，返回0。
-        Boolean acquired = operations.setIfAbsent(lockKey, uuId, expireTime, TimeUnit.MILLISECONDS);
+        Boolean acquired = operations.setIfAbsent(lockKey, uuId);
         return acquired != null && acquired;
     }
 
