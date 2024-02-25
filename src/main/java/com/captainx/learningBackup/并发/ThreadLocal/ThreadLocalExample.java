@@ -34,7 +34,7 @@ public class ThreadLocalExample {
                     threadLocalExample.setContent(Thread.currentThread().getName()+"的first数据");
                     threadLocalExample.setContent2(Thread.currentThread().getName()+"的second数据");
                     System.out.println(Thread.currentThread().getName()+"--->"+threadLocalExample.getContent()+"   "+threadLocalExample.getContent2());
-                    t1.remove();
+                   // t1.remove();
                 }
             };
             Thread thread=new Thread(task);

@@ -35,6 +35,9 @@ public class TransmittableThreadLocalAsyncExample {
                 System.out.println("Nested Async Thread Value: " + nestedValue);
             });
         }, executorService);
+
+
+
         CompletableFuture<Void> completableFuture2=completableFuture1.thenRunAsync(() -> {
             // 在异步线程2中，线程本地变量的值是初始值，因为没有在当前线程中设置过
             String value = threadLocalVariable.get();

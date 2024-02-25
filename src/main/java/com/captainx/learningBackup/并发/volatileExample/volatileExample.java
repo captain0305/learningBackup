@@ -8,6 +8,7 @@ public class volatileExample {
             System.out.println("Thread A started");
             while (!flag) {
                 // 执行一些操作
+//                System.out.println("Thread A work");
             }
             System.out.println("Thread A finished");
         }).start();

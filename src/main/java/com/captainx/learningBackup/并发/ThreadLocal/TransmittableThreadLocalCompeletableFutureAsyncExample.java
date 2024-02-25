@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 public class TransmittableThreadLocalCompeletableFutureAsyncExample {
     private static final TransmittableThreadLocal<String> threadLocalVariable = new TransmittableThreadLocal<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // 在主线程中设置线程本地变量的值
         threadLocalVariable.set("com.captainx.learningBackup.Main Thread Value");
 
@@ -37,7 +37,7 @@ public class TransmittableThreadLocalCompeletableFutureAsyncExample {
             });
         });
 
-
+        Thread.sleep(500);
         // 异步任务2
         executorService.submit(() -> {
             // 在异步线程2中，线程本地变量的值是初始值，因为没有在当前线程中设置过
@@ -45,8 +45,11 @@ public class TransmittableThreadLocalCompeletableFutureAsyncExample {
             System.out.println("Async Thread 2 Value: " + value);
         });
 
+       Thread.sleep(1000);
         // 关闭线程池
         executorService.shutdown();
+
+
 
     }
 }
