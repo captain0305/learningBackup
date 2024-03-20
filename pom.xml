@@ -95,7 +95,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.1</version> <!-- 使用最新版本 -->
-            <scope>compile</scope>>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.3.0</version>
         </dependency>
 
         <!--spring依赖  核心IoC-->
@@ -166,6 +171,11 @@
             <version>1.9.6</version>
             <scope>compile</scope>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.aspectj</groupId>-->
+<!--            <artifactId>aspectjrt</artifactId>-->
+<!--            <version>1.9.6</version>-->
+<!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
         <dependency>
@@ -185,7 +195,43 @@
     </dependencies>
 
     <build>
+        <!--验证工具用于编译aspectj内容-->
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>1.11</version>
+                <configuration>
+                    <complianceLevel>1.8</complianceLevel>
+                    <includes>
+                        <include>com/captainx/learningBackup/AOP/staticAop/*.java</include>
+
+                    </includes>
+<!--                    <excludes>-->
+<!--                        <exclude>事务处理/**</exclude>-->
+<!--                    </excludes>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+
+                </executions>
+
+                <dependencies>
+                    <!-- AspectJ 运行时依赖 -->
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>1.9.6</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -195,27 +241,7 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
-<!--                    <annotationProcessorPaths>-->
-<!--                        &lt;!&ndash; 添加注解处理器的依赖 &ndash;&gt;-->
-<!--                        <path>-->
 
-<!--                            <groupId>org.modelmapper</groupId>-->
-<!--                            <artifactId>modelmapper</artifactId>-->
-<!--                            <version>2.4.0</version> &lt;!&ndash; 使用最新版本 &ndash;&gt;-->
-<!--                        </path>-->
-<!--                        <path>-->
-<!--                            <groupId>org.projectlombok</groupId>-->
-<!--                            <artifactId>lombok</artifactId>-->
-<!--                            <version>1.18.22</version> &lt;!&ndash; 使用最新版本 &ndash;&gt;-->
-<!--                            <scope>provided</scope>-->
-<!--                        </path>-->
-<!--                        <path>-->
-<!--                            <groupId>org.mapstruct</groupId>-->
-<!--                            <artifactId>mapstruct</artifactId>-->
-<!--                            <version>1.2.0.Final</version> &lt;!&ndash; 使用最新版本 &ndash;&gt;-->
-<!--                        </path>-->
-
-<!--                    </annotationProcessorPaths>-->
                 </configuration>
             </plugin>
 

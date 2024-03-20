@@ -12,7 +12,7 @@ public class quickSort {
 
         System.out.println("Sorted array: " + Arrays.toString(arr));
     }
-
+    //给定一个字符串，找出该字符串的最长回文子串。回文字符串指的就是从左右两边看都一样的字符串，如 aba，cddc 都是回文字符串。字符串 abbacdc 存在的回文子串有 abba 和 cdc，因此它的最长回文子串为 abba
     // 快速排序主函数
     public static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
