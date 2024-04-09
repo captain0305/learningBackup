@@ -7,7 +7,7 @@ package com.captainx.learningBackup.leetcode.字符串;
  **/
 public class KMP {
     public static void main(String[] args) {
-        String txt = "ABABDABACDABABCABAB";
+        String txt = "ABABDABACDABABCABABCABAB";
         String pat = "ABABCABAB";
         KMPSearch(pat, txt);
     }
@@ -49,6 +49,7 @@ public class KMP {
         computeLPSArray(pat, M, lps);
 
         int i = 0; // index for txt[]
+        //j为模式串下表 i为目标串下表
         while (i < N) {
             if (pat.charAt(j) == txt.charAt(i)) {
                 j++;
@@ -56,8 +57,11 @@ public class KMP {
             }
             if (j == M) {
                 System.out.println("Found pattern at index " + (i - j));
+                //找到匹配位置重置下标继续匹配
                 j = lps[j - 1];
+                //目标串还没到尾且目标串和文本串不匹配
             } else if (i < N && pat.charAt(j) != txt.charAt(i)) {
+
                 if (j != 0)
                     j = lps[j - 1];
                 else
